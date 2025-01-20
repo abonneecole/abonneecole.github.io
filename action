@@ -4,23 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Action - À Bonne École</title>
-    <!-- Styles identiques à la page Réflexion -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            background: linear-gradient(to bottom, black, white);
+            min-height: 200vh;
+        }
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .section:nth-child(1) {
+            color: white;
+        }
+        .section:nth-child(2) {
+            color: black;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: black;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: white;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>À Bonne École - Action</h1>
+        <nav>
+            <a href="../index.html">Accueil</a>
+            <a href="../réflexion/index.html">Réflexion</a>
+            <a href="#section1">Retour en haut</a>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="../index.html">Accueil</a></li>
-            <li><a href="../réflexion/index.html">Réflexion</a></li>
-            <li><a href="index.html">Action</a></li>
-        </ul>
-    </nav>
-    <section>
-        <!-- ÉCRIVEZ ICI LE CONTENU DE LA PAGE "ACTION" -->
-        <h2>Action</h2>
-        <p>Cette section présente les initiatives concrètes menées par À Bonne École.</p>
-    </section>
+    <div id="section1" class="section">
+        <p>Agir aujourd'hui pour un avenir meilleur.</p>
+    </div>
+    <div id="section2" class="section">
+        <p>Transformer des idées en initiatives concrètes.</p>
+    </div>
+    <footer>
+        <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
