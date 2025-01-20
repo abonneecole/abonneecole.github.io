@@ -14,6 +14,35 @@
             text-align: center;
         }
 
+        /* Styles pour le tableau déroulant */
+        .pdf-table {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .pdf-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .pdf-button:hover {
+            background: gray;
+        }
+
+        .pdf-table iframe {
+            width: 80%;
+            height: 600px;
+            border: none;
+        }
+
+        /* Menu fixe */
         header {
             position: fixed;
             top: 0;
@@ -22,76 +51,33 @@
             background: black;
             padding: 15px 0;
             text-align: center;
+            z-index: 1000;
         }
 
         header h1 {
             margin: 0;
+            font-size: 1.5em;
             color: white;
+        }
+
+        nav {
+            margin-top: 10px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 10px;
+            font-size: 1em;
         }
 
         nav a:hover {
             text-decoration: underline;
         }
-
-        .content {
-            margin-top: 100px;
-            padding: 20px;
-        }
-
-        /* Styles pour le tableau déroulant */
-        .pdf-table-container {
-            margin-top: 20px;
-            text-align: center;
-            background-color: #f4f4f4;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 10px;
-            display: none;
-            transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
-        }
-
-        .pdf-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            background: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .pdf-button:hover {
-            background-color: #555;
-        }
-
-        .pdf-table-container iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-        }
-
-        /* Animation pour le tableau déroulant */
-        .pdf-table-container.open {
-            display: block;
-            max-height: 800px;
-            padding: 20px;
-        }
     </style>
 </head>
 <body>
-
+    <!-- Menu fixe -->
     <header>
         <h1>Réflexion - À Bonne École</h1>
         <nav>
@@ -104,20 +90,12 @@
         <h2>Réfléchir, analyser, innover</h2>
         <p>Bienvenue dans notre espace dédié à la réflexion. Vous pouvez écrire ici vos idées, analyses et propositions.</p>
         
-        <!-- Section Études avec tableau déroulant -->
-        <button class="pdf-button" onclick="toggleTable()">Voir l'étude</button>
-
-        <div class="pdf-table-container" id="pdfTableContainer">
-            <iframe src="assets/EducationvsLaborProductivity.pdf" width="100%" height="600px"></iframe>
+        <!-- Section Études -->
+        <div class="pdf-table">
+            <a href="#" class="pdf-button" onclick="document.querySelector('.pdf-table').style.display='block';">Voir l'étude</a>
+            <!-- Assurez-vous que ce chemin est correct et correspond à votre fichier PDF dans le dossier assets -->
+            <iframe src="../assets/EducationvsLaborProductivity.pdf" width="600" height="400"></iframe>
         </div>
     </div>
-
-    <script>
-        function toggleTable() {
-            const table = document.getElementById('pdfTableContainer');
-            table.classList.toggle('open');
-        }
-    </script>
-
 </body>
 </html>
