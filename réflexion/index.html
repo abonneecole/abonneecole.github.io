@@ -41,7 +41,7 @@
 
         /* Styles pour le tableau déroulant */
         .pdf-table {
-            display: none;
+            display: none; /* Caché par défaut */
             margin-top: 20px;
             text-align: center;
         }
@@ -84,7 +84,7 @@
         <div class="pdf-table">
             <a href="#" class="pdf-button" onclick="document.querySelector('.pdf-table').style.display='block';">Voir l'étude</a>
             <!-- Remplacez ce chemin par celui où le PDF est stocké dans votre projet -->
-<iframe src="assets/votre-etude.pdf" width="600" height="400"></iframe>
+            <iframe src="assets/votre-etude.pdf" width="600" height="400"></iframe>
         </div>
     </div>
 </body>
