@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             color: white;
-            background: linear-gradient(to bottom, black, white 80%);
+            background: linear-gradient(to bottom, black, white 80%); /* Fond dégradé */
             min-height: 300vh; /* Hauteur augmentée pour le scroll */
         }
 
@@ -28,12 +28,10 @@
         }
 
         /* Transition des couleurs pour chaque section */
-        .section:nth-child(1) {
+        .section:nth-child(1), .section:nth-child(2) {
             color: white;
         }
-        .section:nth-child(2) {
-            color: white;
-        }
+
         .section:nth-child(3) {
             color: black;
         }
@@ -47,14 +45,15 @@
             color: black;
             height: 100vh;
             text-align: center;
-            font-size: 2em;
+            font-size: 2.5em;
+            font-weight: bold;
         }
 
         .final-section a {
             text-decoration: none;
             color: white;
             background: black;
-            padding: 15px 30px;
+            padding: 20px 40px;
             border-radius: 10px;
             font-size: 1.5em;
             font-weight: bold;
@@ -128,6 +127,11 @@
             color: #f1f1f1;
             transform: scale(1.1);
         }
+
+        /* Transition entre la section et la page finale */
+        .smooth-transition {
+            transition: all 0.7s ease-in-out;
+        }
     </style>
 </head>
 <body>
@@ -159,10 +163,10 @@
     <!-- Section finale avec les liens vers Réflexion et Action -->
     <div class="final-section">
         <a href="réflexion/index.html" class="section-link">
-            <span class="section-title">Réflexion</span>
+            <span class="section-title smooth-transition">Réflexion</span>
         </a>
         <a href="action/index.html" class="section-link">
-            <span class="section-title">Action</span>
+            <span class="section-title smooth-transition">Action</span>
         </a>
     </div>
 
