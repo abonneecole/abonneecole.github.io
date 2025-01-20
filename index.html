@@ -3,48 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="À Bonne École - Promouvoir une éducation inclusive et inspirante pour tous.">
+    <meta name="description" content="À Bonne École - Promouvoir une éducation inclusive et inspirante.">
     <title>À Bonne École</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
             color: #333;
-            line-height: 1.6;
         }
         header {
-            background: #4CAF50;
+            background-color: #000;
             color: white;
-            padding: 20px 0;
-            text-align: center;
+            padding: 15px;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5em;
         }
-        header p {
-            font-size: 1.2em;
+        nav {
+            background-color: #000;
+            overflow: hidden;
+        }
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li {
+            float: left;
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        nav ul li a:hover {
+            background-color: #444;
+        }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #000;
+            min-width: 150px;
+            z-index: 1000;
+        }
+        nav ul li:hover ul {
+            display: block;
+        }
+        nav ul li ul li {
+            float: none;
         }
         section {
             padding: 20px;
             max-width: 900px;
-            margin: 20px auto;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 20px 0;
-            color: white;
-            background: #4CAF50;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background: #45a049;
+            margin: auto;
+            background-color: white;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
         }
         footer {
-            background: #333;
+            background-color: #000;
             color: white;
             text-align: center;
             padding: 10px 0;
@@ -55,21 +75,28 @@
 <body>
     <header>
         <h1>À Bonne École</h1>
-        <p>Semer des rêves, cultiver des vocations, inspirer les générations futures</p>
     </header>
-    <section>
-        <h2>Notre Mission</h2>
-        <p>À Bonne École est une association dédiée à la promotion d'une éducation inclusive, accessible et inspirante. Nous croyons en un monde où chaque jeune, peu importe son origine, peut cultiver ses ambitions et réaliser ses rêves.</p>
-        <h2>Nos Objectifs</h2>
+    <nav>
         <ul>
-            <li>Créer des vocations en éveillant la curiosité des jeunes issus de milieux défavorisés.</li>
-            <li>Organiser des événements culturels dans des lieux emblématiques de Paris.</li>
-            <li>Offrir des opportunités d’apprentissage et de mentorat pour développer leurs talents.</li>
+            <li><a href="index.html">Accueil</a></li>
+            <li>
+                <a href="#">Menu</a>
+                <ul>
+                    <li><a href="réflexion/index.html">Réflexion</a></li>
+                    <li><a href="action/index.html">Action</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="#contact" class="button">Rejoignez-nous</a>
+    </nav>
+    <section>
+        <!-- ÉCRIVEZ ICI LE TEXTE DE LA PAGE PRINCIPALE -->
+        <h2>Bienvenue sur À Bonne École</h2>
+        <p>Notre mission est de promouvoir une éducation inclusive et inspirante pour tous.</p>
     </section>
     <footer>
         <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
     </footer>
 </body>
 </html>
+
