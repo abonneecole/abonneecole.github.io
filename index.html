@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             color: white;
-            background: linear-gradient(to bottom, black, white 80%); /* Fond dégradé */
+            background: linear-gradient(to bottom, black, white 80%);
             min-height: 300vh; /* Hauteur augmentée pour le scroll */
         }
 
@@ -23,11 +23,10 @@
             align-items: center;
             height: 100vh;
             text-align: center;
-            font-size: 2.5em; /* Taille légèrement augmentée */
+            font-size: 2.5em;
             font-weight: bold;
         }
 
-        /* Transition des couleurs pour chaque section */
         .section:nth-child(1), .section:nth-child(2) {
             color: white;
         }
@@ -36,33 +35,35 @@
             color: black;
         }
 
-        /* Section finale avec les liens Réflexion et Action */
-        .final-section {
+        /* Section Action et Réflexion dans le dégradé */
+        .final-sections {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            background: white;
+            background: transparent;
             color: black;
-            height: 100vh;
+            height: 60vh;
             text-align: center;
             font-size: 2.5em;
             font-weight: bold;
+            margin-top: 20px;
         }
 
-        .final-section a {
+        .final-sections a {
             text-decoration: none;
-            color: white;
-            background: black;
-            padding: 20px 40px;
-            border-radius: 10px;
+            color: black;
+            padding: 15px 30px;
             font-size: 1.5em;
             font-weight: bold;
-            transition: background 0.3s ease, transform 0.3s ease;
+            transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+            border: 2px solid black;
         }
 
-        .final-section a:hover {
-            background: gray;
-            transform: scale(1.1);
+        .final-sections a:hover {
+            background: black;
+            color: white;
+            transform: scale(1.05);
         }
 
         /* Menu fixe */
@@ -98,39 +99,12 @@
             text-decoration: underline;
         }
 
-        /* Flèche stylisée pour la section finale */
-        .section-title {
-            font-size: 4rem;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            font-weight: bold;
-            color: #fff;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title:after {
-            content: '➤';  /* Flèche */
-            position: absolute;
-            top: 0;
-            right: -40px;
-            font-size: 2rem;
-        }
-
-        .section-link {
-            color: #fff;
-            text-decoration: none;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .section-link:hover {
-            color: #f1f1f1;
-            transform: scale(1.1);
-        }
-
-        /* Transition entre la section et la page finale */
-        .smooth-transition {
-            transition: all 0.7s ease-in-out;
+        /* Footer */
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
         }
     </style>
 </head>
@@ -160,14 +134,10 @@
         <p style="color: black;">Unir nos forces pour transformer des vies.</p>
     </div>
 
-    <!-- Section finale avec les liens vers Réflexion et Action -->
-    <div class="final-section">
-        <a href="réflexion/index.html" class="section-link">
-            <span class="section-title smooth-transition">Réflexion</span>
-        </a>
-        <a href="action/index.html" class="section-link">
-            <span class="section-title smooth-transition">Action</span>
-        </a>
+    <!-- Final Sections (Réflexion & Action) -->
+    <div class="final-sections">
+        <a href="réflexion/index.html">Réflexion</a>
+        <a href="action/index.html">Action</a>
     </div>
 
     <!-- Footer -->
