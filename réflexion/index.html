@@ -38,6 +38,34 @@
             margin-top: 100px;
             padding: 20px;
         }
+
+        /* Styles pour le tableau déroulant */
+        .pdf-table {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .pdf-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .pdf-button:hover {
+            background: gray;
+        }
+
+        .pdf-table iframe {
+            width: 80%;
+            height: 600px;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -51,6 +79,13 @@
     <div class="content">
         <h2>Réfléchir, analyser, innover</h2>
         <p>Bienvenue dans notre espace dédié à la réflexion. Vous pouvez écrire ici vos idées, analyses et propositions.</p>
+        
+        <!-- Section Études -->
+        <div class="pdf-table">
+            <a href="#" class="pdf-button" onclick="document.querySelector('.pdf-table').style.display='block';">Voir l'étude</a>
+            <!-- Remplacez ce chemin par celui où le PDF est stocké dans votre projet -->
+            <iframe src="assets/votre-etude.pdf" style="display: none;"></iframe>
+        </div>
     </div>
 </body>
 </html>
