@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action - À Bonne École</title>
+    <!-- Styles identiques à la page Réflexion -->
+</head>
+<body>
+    <header>
+        <h1>À Bonne École - Action</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="../réflexion/index.html">Réflexion</a></li>
+            <li><a href="index.html">Action</a></li>
+        </ul>
+    </nav>
+    <section>
+        <!-- ÉCRIVEZ ICI LE CONTENU DE LA PAGE "ACTION" -->
+        <h2>Action</h2>
+        <p>Cette section présente les initiatives concrètes menées par À Bonne École.</p>
+    </section>
+</body>
+</html>
