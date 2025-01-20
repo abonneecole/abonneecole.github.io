@@ -13,7 +13,7 @@
             padding: 0;
             color: white;
             background: linear-gradient(to bottom, black, white 90%);
-            min-height: 350vh; /* Hauteur augmentée pour permettre plus de contenu */
+            min-height: 400vh; /* Hauteur augmentée pour permettre plus de contenu */
         }
 
         /* Sections */
@@ -35,7 +35,7 @@
             color: black;
         }
 
-        /* Final Sections (Réflexion & Action) - Appliquées dans le dégradé */
+        /* Final Sections (Réflexions & Actions) */
         .final-sections {
             display: flex;
             justify-content: space-around;
@@ -64,6 +64,33 @@
             background: black;
             color: white;
             transform: scale(1.05);
+        }
+
+        /* Études Section */
+        .studies-section {
+            background: white;
+            color: black;
+            padding: 20px;
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .studies-section a {
+            text-decoration: none;
+            color: black;
+            background: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: 2px solid black;
+            transition: background 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .studies-section a:hover {
+            background: black;
+            color: white;
         }
 
         /* Menu fixe */
@@ -134,10 +161,17 @@
         <p style="color: black;">Unir nos forces pour transformer des vies.</p>
     </div>
 
-    <!-- Final Sections (Réflexion & Action) -->
+    <!-- Final Sections (Réflexions & Actions) -->
     <div class="final-sections">
-        <a href="réflexion/index.html">Réflexion</a>
-        <a href="action/index.html">Action</a>
+        <a href="réflexions/index.html">Réflexions</a>
+        <a href="actions/index.html">Actions</a>
+    </div>
+
+    <!-- Études Section -->
+    <div class="studies-section">
+        <h2>Étude : Impact et perspectives</h2>
+        <p>Vous pouvez consulter l'étude complète en cliquant sur le lien ci-dessous.</p>
+        <a href="etude.pdf" target="_blank">Lire l'Étude</a>
     </div>
 
     <!-- Footer -->
