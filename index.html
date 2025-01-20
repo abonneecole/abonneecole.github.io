@@ -12,22 +12,22 @@
             margin: 0;
             padding: 0;
             color: white;
-            background: linear-gradient(to bottom, black, white);
-            min-height: 200vh; /* Augmente la hauteur pour permettre le scroll */
+            background: linear-gradient(to bottom, black, white 80%);
+            min-height: 300vh; /* Hauteur augmentée pour le scroll */
         }
 
-        /* Styles pour les zones */
+        /* Sections */
         .section {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Chaque section occupe 100% de la hauteur de la fenêtre */
+            height: 100vh;
             text-align: center;
-            font-size: 2em;
+            font-size: 2.5em; /* Taille légèrement augmentée */
             font-weight: bold;
         }
 
-        /* Transition entre les couleurs selon les sections */
+        /* Transition des couleurs pour chaque section */
         .section:nth-child(1) {
             color: white;
         }
@@ -36,6 +36,31 @@
         }
         .section:nth-child(3) {
             color: black;
+        }
+
+        /* Zone finale */
+        .final-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: white;
+            color: black;
+            height: 100vh;
+            text-align: center;
+            font-size: 2em;
+        }
+        .final-section a {
+            text-decoration: none;
+            color: white;
+            background: black;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .final-section a:hover {
+            background: gray;
         }
 
         /* Menu fixe */
@@ -99,7 +124,13 @@
 
     <!-- Section 3 -->
     <div id="section3" class="section">
-        <p>Unir nos forces pour transformer des vies.</p>
+        <p style="color: black;">Unir nos forces pour transformer des vies.</p>
+    </div>
+
+    <!-- Section finale -->
+    <div class="final-section">
+        <a href="réflexion/index.html">Réflexion</a>
+        <a href="action/index.html">Action</a>
     </div>
 
     <!-- Footer -->
