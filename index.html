@@ -35,16 +35,16 @@
             color: black;
         }
 
-        /* Final Sections (Réflexion & Action) - Appliquées dans le dégradé */
+        /* Final Sections (Une Réflexion & Des Actions) */
         .final-sections {
             display: flex;
             justify-content: space-around;
             align-items: center;
             background: transparent; /* On garde le dégradé continu */
             color: black;
-            height: 70vh; /* Réduit pour donner un effet plus léger */
+            height: 80vh; /* Augmentée pour plus d'espace */
             text-align: center;
-            font-size: 1.5em;
+            font-size: 1.8em;
             font-weight: bold;
             margin-top: 20px;
         }
@@ -53,7 +53,7 @@
             text-decoration: none;
             color: black;
             padding: 15px 30px;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-weight: bold;
             transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
             border-radius: 5px;
@@ -64,6 +64,34 @@
             background: black;
             color: white;
             transform: scale(1.05);
+        }
+
+        /* Table déroulant pour les études */
+        .pdf-table {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .pdf-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .pdf-button:hover {
+            background: gray;
+        }
+
+        .pdf-table iframe {
+            width: 80%;
+            height: 600px;
+            border: none;
         }
 
         /* Menu fixe */
@@ -134,10 +162,16 @@
         <p style="color: black;">Unir nos forces pour transformer des vies.</p>
     </div>
 
-    <!-- Final Sections (Réflexion & Action) -->
+    <!-- Final Sections (Une Réflexion & Des Actions) -->
     <div class="final-sections">
         <a href="réflexion/index.html">Une réflexion</a>
         <a href="action/index.html">Des actions</a>
+    </div>
+
+    <!-- Section Études -->
+    <div class="pdf-table">
+        <a href="#" class="pdf-button" onclick="document.querySelector('.pdf-table').style.display='block';">Voir l'étude</a>
+        <iframe src="votre-etude.pdf" style="display: none;"></iframe>
     </div>
 
     <!-- Footer -->
