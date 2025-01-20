@@ -38,7 +38,7 @@
             color: black;
         }
 
-        /* Zone finale */
+        /* Section finale avec les liens Réflexion et Action */
         .final-section {
             display: flex;
             justify-content: space-around;
@@ -49,18 +49,21 @@
             text-align: center;
             font-size: 2em;
         }
+
         .final-section a {
             text-decoration: none;
             color: white;
             background: black;
             padding: 15px 30px;
             border-radius: 10px;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-weight: bold;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
+
         .final-section a:hover {
             background: gray;
+            transform: scale(1.1);
         }
 
         /* Menu fixe */
@@ -74,30 +77,56 @@
             text-align: center;
             z-index: 1000;
         }
+
         header h1 {
             margin: 0;
             font-size: 1.5em;
             color: white;
         }
+
         nav {
             margin-top: 10px;
         }
+
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 10px;
             font-size: 1em;
         }
+
         nav a:hover {
             text-decoration: underline;
         }
 
-        /* Footer */
-        footer {
-            background: black;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
+        /* Flèche stylisée pour la section finale */
+        .section-title {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: bold;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '➤';  /* Flèche */
+            position: absolute;
+            top: 0;
+            right: -40px;
+            font-size: 2rem;
+        }
+
+        .section-link {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .section-link:hover {
+            color: #f1f1f1;
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -127,10 +156,14 @@
         <p style="color: black;">Unir nos forces pour transformer des vies.</p>
     </div>
 
-    <!-- Section finale -->
+    <!-- Section finale avec les liens vers Réflexion et Action -->
     <div class="final-section">
-        <a href="réflexion/index.html">Réflexion</a>
-        <a href="action/index.html">Action</a>
+        <a href="réflexion/index.html" class="section-link">
+            <span class="section-title">Réflexion</span>
+        </a>
+        <a href="action/index.html" class="section-link">
+            <span class="section-title">Action</span>
+        </a>
     </div>
 
     <!-- Footer -->
