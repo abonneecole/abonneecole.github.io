@@ -58,7 +58,7 @@
         /* Section Études */
         .study-section {
             text-align: left;
-            margin: 30px auto;
+            margin: 50px auto 30px; /* Plus bas sur la page */
             max-width: 90%;
         }
 
@@ -75,45 +75,46 @@
         }
 
         .pdf-table iframe {
-            width: 75%;
-            height: 500px;
+            width: 60%; /* Réduction supplémentaire */
+            height: 400px; /* Moins de hauteur */
             border: none;
+            display: block;
+            margin: 0 auto; /* Centré */
         }
 
-        /* Tableau déroulant pour événements */
-        .events-table {
-            position: fixed;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
+        /* Tableau horizontal déroulant pour événements */
+        .horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 0;
+            margin: 30px auto;
+            max-width: 90%;
             background: rgba(255, 255, 255, 0.8);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            padding: 20px;
             border-radius: 8px;
-            width: 200px;
-            overflow-y: auto;
-            max-height: 300px;
-            font-size: 0.9em;
         }
 
-        .events-table h3 {
-            margin: 0 0 10px;
-            font-size: 1.2em;
+        .event-card {
+            min-width: 200px;
+            max-width: 200px;
+            margin: 0 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
             text-align: center;
+            flex-shrink: 0;
         }
 
-        .events-table ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .event-card h3 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: black;
         }
 
-        .events-table ul li {
-            margin: 5px 0;
-        }
-
-        .events-table ul li span {
-            font-weight: bold;
+        .event-card p {
+            font-size: 0.9em;
+            color: black;
         }
     </style>
 </head>
@@ -138,16 +139,28 @@
             </div>
         </div>
 
-        <!-- Tableau des événements -->
-        <div class="events-table">
-            <h3>Événements</h3>
-            <ul>
-                <li><span>10/02/2025 :</span> Conférence sur l'éducation inclusive</li>
-                <li><span>15/03/2025 :</span> Atelier pour les jeunes</li>
-                <li><span>01/04/2025 :</span> Rencontre avec des experts</li>
-                <li><span>Passé :</span> Lancement de l'association</li>
-                <li><span>Passé :</span> Séminaire sur les inégalités</li>
-            </ul>
+        <!-- Tableau horizontal des événements -->
+        <div class="horizontal-scroll">
+            <div class="event-card">
+                <h3>10/02/2025</h3>
+                <p>Conférence sur l'éducation inclusive</p>
+            </div>
+            <div class="event-card">
+                <h3>15/03/2025</h3>
+                <p>Atelier pour les jeunes</p>
+            </div>
+            <div class="event-card">
+                <h3>01/04/2025</h3>
+                <p>Rencontre avec des experts</p>
+            </div>
+            <div class="event-card">
+                <h3>Passé</h3>
+                <p>Lancement de l'association</p>
+            </div>
+            <div class="event-card">
+                <h3>Passé</h3>
+                <p>Séminaire sur les inégalités</p>
+            </div>
         </div>
     </div>
 
