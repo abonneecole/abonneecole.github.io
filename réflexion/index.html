@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réflexion - À Bonne École</title>
     <style>
+        /* Corps de la page */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: white;
+            background: url('../assets/ecole_athenes.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: black;
             text-align: center;
         }
@@ -49,21 +51,69 @@
 
         /* Style pour le contenu */
         .content {
-            margin-top: 80px; /* Pour que le contenu ne soit pas caché derrière le header */
+            margin-top: 80px;
             padding: 20px;
         }
 
-        /* Style du tableau déroulant */
-        .pdf-table {
-            display: block; /* Affiché dès le chargement de la page */
-            margin-top: 20px;
-            text-align: center;
+        /* Section Études */
+        .study-section {
+            text-align: left;
+            margin: 30px auto;
+            max-width: 90%;
+        }
+
+        .study-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .study-section p {
+            font-size: 1.2em;
+            color: black;
+            margin-bottom: 15px;
         }
 
         .pdf-table iframe {
-            width: 80%;
-            height: 600px;
+            width: 75%;
+            height: 500px;
             border: none;
+        }
+
+        /* Tableau déroulant pour événements */
+        .events-table {
+            position: fixed;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            width: 200px;
+            overflow-y: auto;
+            max-height: 300px;
+            font-size: 0.9em;
+        }
+
+        .events-table h3 {
+            margin: 0 0 10px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .events-table ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .events-table ul li {
+            margin: 5px 0;
+        }
+
+        .events-table ul li span {
+            font-weight: bold;
         }
     </style>
 </head>
@@ -79,13 +129,25 @@
     </header>
 
     <div class="content">
-        <h2>Réfléchir, analyser, innover</h2>
-        <p>Bienvenue dans notre espace dédié à la réflexion. Vous pouvez explorer des études, idées, et propositions.</p>
-        
         <!-- Section Études -->
-        <div class="pdf-table">
-            <!-- Tableau déroulant directement visible avec l'iframe pour afficher le PDF -->
-            <iframe src="../assets/EducationvsLaborProductivity.pdf" width="100%" height="600"></iframe>
+        <div class="study-section">
+            <h2>Section Études</h2>
+            <p>Contribuez à étayer vos idéaux</p>
+            <div class="pdf-table">
+                <iframe src="../assets/EducationvsLaborProductivity.pdf"></iframe>
+            </div>
+        </div>
+
+        <!-- Tableau des événements -->
+        <div class="events-table">
+            <h3>Événements</h3>
+            <ul>
+                <li><span>10/02/2025 :</span> Conférence sur l'éducation inclusive</li>
+                <li><span>15/03/2025 :</span> Atelier pour les jeunes</li>
+                <li><span>01/04/2025 :</span> Rencontre avec des experts</li>
+                <li><span>Passé :</span> Lancement de l'association</li>
+                <li><span>Passé :</span> Séminaire sur les inégalités</li>
+            </ul>
         </div>
     </div>
 
