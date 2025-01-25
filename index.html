@@ -32,7 +32,7 @@
         }
 
         .section:nth-child(2) p {
-            color: #f8f8f8; /* Blanc légèrement adouci */
+            color: #eeeeee; /* Blanc légèrement atténué pour convenir au dégradé */
         }
 
         .section:nth-child(3) {
@@ -103,6 +103,33 @@
             text-decoration: underline;
         }
 
+        /* Flèche de défilement */
+        .scroll-down {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: white;
+            animation: bounce 1.5s infinite;
+            cursor: pointer;
+        }
+
+        .scroll-down:hover {
+            color: #cccccc;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
         /* Footer */
         footer {
             background: black;
@@ -142,6 +169,11 @@
     <div class="final-sections">
         <a href="réflexion/index.html">Une réflexion</a>
         <a href="action/index.html">Des actions</a>
+    </div>
+
+    <!-- Flèche de défilement -->
+    <div class="scroll-down" onclick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+        ↓
     </div>
 
     <!-- Footer -->
