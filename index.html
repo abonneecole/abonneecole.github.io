@@ -13,7 +13,6 @@
             padding: 0;
             color: white;
             background: linear-gradient(to bottom, black, white 90%);
-            min-height: 350vh;
         }
 
         /* Sections */
@@ -32,10 +31,6 @@
             color: white;
         }
 
-        .section:nth-child(2) p {
-            color: #eeeeee;
-        }
-
         .section:nth-child(3) {
             color: black;
         }
@@ -43,34 +38,50 @@
         /* Final Sections */
         .final-sections {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
-            background: transparent;
-            color: black;
-            height: 80vh;
-            text-align: center;
-            font-size: 1.8em;
-            font-weight: bold;
+            padding: 50px 20px;
             margin-top: 20px;
+        }
+
+        .final-sections .box {
+            width: 40%;
+            height: 200px;
+            background: black;
+            color: white;
+            text-align: center;
+            line-height: 200px;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 15px;
+            position: relative;
         }
 
         .final-sections a {
             text-decoration: none;
-            color: black;
-            padding: 15px 30px;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin: 10px;
-            transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
-            border-radius: 5px;
-            border: 2px solid black;
+            color: white;
         }
 
-        .final-sections a:hover {
-            background: black;
-            color: white;
-            transform: scale(1.05);
+        /* Flèche animée */
+        .arrow {
+            width: 50px;
+            height: 50px;
+            border-left: 5px solid black;
+            border-bottom: 5px solid black;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 50%;
+            right: -60px;
+            animation: moveArrow 1.5s infinite;
+        }
+
+        @keyframes moveArrow {
+            0%, 100% {
+                transform: rotate(-45deg) translateX(0);
+            }
+            50% {
+                transform: rotate(-45deg) translateX(10px);
+            }
         }
 
         /* Menu fixe */
@@ -106,121 +117,12 @@
             text-decoration: underline;
         }
 
-        /* Flèche de défilement */
-        .scroll-down {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            font-size: 2em;
-            color: white;
-            animation: bounce 1.5s infinite;
-            cursor: pointer;
-            z-index: 1000;
-        }
-
-        .scroll-down:hover {
-            color: #cccccc;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        /* Section Contact */
-        .contact {
-            background: #f4f4f4;
-            color: black;
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .contact h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .contact form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact input, .contact textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .contact button {
-            background: black;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-
-        .contact button:hover {
-            background: #333;
-        }
-
-        .social-icons {
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            color: black;
-            font-size: 1.5em;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        .social-icons a:hover {
-            color: #555;
-        }
-
         /* Footer */
         footer {
             background: black;
             color: white;
             text-align: center;
             padding: 20px 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .section {
-                font-size: 1.8em;
-                padding: 0 15px;
-            }
-
-            header h1 {
-                font-size: 1.2em;
-            }
-
-            nav a {
-                font-size: 0.9em;
-                margin: 0 5px;
-            }
-
-            .final-sections a {
-                font-size: 1.2em;
-                padding: 10px 20px;
-            }
-
-            .scroll-down {
-                font-size: 1.5em;
-            }
         }
     </style>
 </head>
@@ -251,48 +153,37 @@
         <p style="color: black;">Penser l'alternative et poursuivre la réalisation d'un idéal.</p>
     </div>
 
-    <!-- Final Sections -->
+    <!-- Final Sections (Une Réflexion & Des Actions) -->
     <div class="final-sections">
-        <a href="réflexion/index.html">Une réflexion</a>
-        <a href="action/index.html">Des actions</a>
-    </div>
-
-    <!-- Section Contact -->
-    <div id="contact" class="contact">
-        <h2>Contactez-nous</h2>
-        <form>
-            <input type="text" placeholder="Votre nom" required>
-            <input type="email" placeholder="Votre email" required>
-            <textarea rows="5" placeholder="Votre message" required></textarea>
-            <button type="submit">Envoyer</button>
-        </form>
-
-        <div class="social-icons">
-            <a href="#" target="_blank">Facebook</a>
-            <a href="#" target="_blank">Twitter</a>
-            <a href="#" target="_blank">Instagram</a>
+        <div class="box">
+            <a href="réflexion/index.html">Une réflexion</a>
+            <div class="arrow"></div>
+        </div>
+        <div class="box">
+            <a href="action/index.html">Des actions</a>
         </div>
     </div>
 
-    <!-- Flèche de défilement -->
-    <div id="scroll-down" class="scroll-down" onclick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
-        ↓
+    <!-- Section Contact -->
+    <div id="contact" class="section" style="background: white; color: black;">
+        <h2>Contactez-nous</h2>
+        <form action="https://formspree.io/f/mayvyyre" method="POST">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <br><br>
+            <button type="submit">Envoyer</button>
+        </form>
     </div>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
     </footer>
-
-    <script>
-        const scrollDown = document.getElementById('scroll-down');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                scrollDown.style.display = 'none';
-            } else {
-                scrollDown.style.display = 'block';
-            }
-        });
-    </script>
 </body>
 </html>
