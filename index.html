@@ -13,7 +13,7 @@
             padding: 0;
             color: white;
             background: linear-gradient(to bottom, black, white 90%);
-            min-height: 350vh; /* Hauteur augmentée pour permettre plus de contenu */
+            min-height: 350vh;
         }
 
         /* Sections */
@@ -25,7 +25,7 @@
             text-align: center;
             font-size: 2.5em;
             font-weight: bold;
-            padding: 0 20px; /* Ajouté pour éviter le débordement sur mobile */
+            padding: 0 20px;
         }
 
         .section:nth-child(1), .section:nth-child(2) {
@@ -33,17 +33,17 @@
         }
 
         .section:nth-child(2) p {
-            color: #eeeeee; /* Blanc légèrement atténué pour convenir au dégradé */
+            color: #eeeeee;
         }
 
         .section:nth-child(3) {
             color: black;
         }
 
-        /* Final Sections (Une Réflexion & Des Actions) */
+        /* Final Sections */
         .final-sections {
             display: flex;
-            flex-direction: column; /* Adaptation pour les petits écrans */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background: transparent;
@@ -61,7 +61,7 @@
             padding: 15px 30px;
             font-size: 1.5em;
             font-weight: bold;
-            margin: 10px; /* Espacement entre les boutons */
+            margin: 10px;
             transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
             border-radius: 5px;
             border: 2px solid black;
@@ -134,6 +134,61 @@
             }
         }
 
+        /* Section Contact */
+        .contact {
+            background: #f4f4f4;
+            color: black;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .contact h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            background: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .contact button:hover {
+            background: #333;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: black;
+            font-size: 1.5em;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #555;
+        }
+
         /* Footer */
         footer {
             background: black;
@@ -177,6 +232,7 @@
             <a href="#section1">Accueil</a>
             <a href="réflexion/index.html">Notre Vision</a>
             <a href="action/index.html">Nos Actions</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
@@ -195,10 +251,27 @@
         <p style="color: black;">Penser l'alternative et poursuivre la réalisation d'un idéal.</p>
     </div>
 
-    <!-- Final Sections (Une Réflexion & Des Actions) -->
+    <!-- Final Sections -->
     <div class="final-sections">
         <a href="réflexion/index.html">Une réflexion</a>
         <a href="action/index.html">Des actions</a>
+    </div>
+
+    <!-- Section Contact -->
+    <div id="contact" class="contact">
+        <h2>Contactez-nous</h2>
+        <form>
+            <input type="text" placeholder="Votre nom" required>
+            <input type="email" placeholder="Votre email" required>
+            <textarea rows="5" placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <div class="social-icons">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">Instagram</a>
+        </div>
     </div>
 
     <!-- Flèche de défilement -->
