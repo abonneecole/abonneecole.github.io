@@ -16,6 +16,31 @@
             min-height: 400vh;
         }
 
+        /* Bandeau d'accueil (menu fixe) */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: gray;
+        }
+
         /* Sections */
         .section {
             display: flex;
@@ -43,7 +68,7 @@
         /* Final Sections (Une Réflexion & Des Actions) */
         .final-sections {
             display: flex;
-            flex-direction: row; /* Remis en ligne */
+            flex-direction: row;
             justify-content: center;
             align-items: center;
             background: transparent;
@@ -53,7 +78,8 @@
             font-size: 1.8em;
             font-weight: bold;
             margin-top: 20px;
-            gap: 50px; /* Ajoute un espacement */
+            gap: 50px;
+            flex-wrap: wrap;
         }
 
         .final-sections a {
