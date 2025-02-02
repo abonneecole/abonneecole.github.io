@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: white;
+            background: #f4f4f4;
             color: black;
             text-align: center;
         }
@@ -21,6 +21,7 @@
             background: black;
             padding: 15px 0;
             text-align: center;
+            z-index: 1000;
         }
         header h1 {
             margin: 0;
@@ -38,6 +39,45 @@
             margin-top: 100px;
             padding: 20px;
         }
+        .events-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .event-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .event-card:hover {
+            transform: scale(1.05);
+        }
+        .event-card h3 {
+            margin-top: 0;
+            color: black;
+        }
+        .event-card p {
+            color: black;
+        }
+        .event-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        .event-card a:hover {
+            background: darkgray;
+        }
     </style>
 </head>
 <body>
@@ -51,6 +91,34 @@
     <div class="content">
         <h2>Transformer des idées en initiatives concrètes</h2>
         <p>Bienvenue dans notre espace dédié à l'action. Vous pouvez écrire ici vos projets et réalisations.</p>
+        
+        <div class="events-container">
+            <div class="event-card">
+                <h3>10/02/2025</h3>
+                <p>Conférence sur l'éducation inclusive</p>
+                <a href="#">En savoir plus</a>
+            </div>
+            <div class="event-card">
+                <h3>15/03/2025</h3>
+                <p>Atelier pour les jeunes</p>
+                <a href="#">En savoir plus</a>
+            </div>
+            <div class="event-card">
+                <h3>01/04/2025</h3>
+                <p>Rencontre avec des experts</p>
+                <a href="#">En savoir plus</a>
+            </div>
+            <div class="event-card">
+                <h3>Passé</h3>
+                <p>Lancement de l'association</p>
+                <a href="#">Voir les photos</a>
+            </div>
+            <div class="event-card">
+                <h3>Passé</h3>
+                <p>Séminaire sur les inégalités</p>
+                <a href="#">Voir les photos</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
