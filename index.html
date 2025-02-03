@@ -5,154 +5,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="À Bonne École - Promouvoir une éducation inclusive et inspirante.">
     <title>À Bonne École</title>
-    <style>
-        /* Styles de base */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: white;
-            background: linear-gradient(to bottom, black, #1a1a1a 20%, #333 40%, #666 60%, #999 80%, white 100%);
-            min-height: 400vh;
-        }
+   <style>
+    /* Styles de base */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: white;
+        background: linear-gradient(to bottom, black, #1a1a1a 10%, #333 25%, #888 50%, #ddd 70%, white 90%);
+        min-height: 400vh;
+    }
 
-        /* Bandeau d'accueil (menu fixe) */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: black;
-            color: white;
-            padding: 15px 0;
-            text-align: center;
-            z-index: 1000;
-        }
+    /* Bandeau d'accueil (menu fixe) */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: black;
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+        z-index: 1000;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
 
-        nav a:hover {
-            color: gray;
-        }
+    nav a:hover {
+        color: gray;
+    }
 
-        /* Sections */
-        .section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            font-size: 2.5em;
-            font-weight: bold;
-            padding: 0 20px;
-        }
+    /* Sections */
+    .section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        font-size: 2.5em;
+        font-weight: bold;
+        padding: 0 20px;
+    }
 
-        .section:nth-child(1), .section:nth-child(2) {
-            color: white;
-        }
+    .section:nth-child(1), .section:nth-child(2) {
+        color: white;
+    }
 
-        .section:nth-child(2) p {
-            color: #eeeeee;
-        }
+    .section:nth-child(2) p {
+        color: #eeeeee;
+    }
 
-        .section:nth-child(3) {
-            color: black;
-        }
+    .section:nth-child(3) {
+        color: black;
+    }
 
-        /* Final Sections (Une Réflexion & Des Actions) */
-        .final-sections {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            background: transparent;
-            color: black;
-            height: 80vh;
-            text-align: center;
-            font-size: 1.8em;
-            font-weight: bold;
-            margin-top: 20px;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
+    /* Final Sections (Une Réflexion & Des Actions) */
+    .final-sections {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        color: black;
+        height: 80vh;
+        text-align: center;
+        font-size: 1.8em;
+        font-weight: bold;
+        margin-top: 20px;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
 
-        .final-sections a {
-            text-decoration: none;
-            color: black;
-            padding: 15px 30px;
-            font-size: 1.5em;
-            font-weight: bold;
-            border-radius: 5px;
-            border: 2px solid black;
-            transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
-        }
+    .final-sections a {
+        text-decoration: none;
+        color: black;
+        padding: 15px 30px;
+        font-size: 1.5em;
+        font-weight: bold;
+        border-radius: 5px;
+        border: 2px solid black;
+        transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    }
 
-        .final-sections a:hover {
-            background: black;
-            color: white;
-            transform: scale(1.05);
-        }
+    .final-sections a:hover {
+        background: black;
+        color: white;
+        transform: scale(1.05);
+    }
 
-        /* Section Contact */
-        .contact-section {
-            padding: 50px 20px;
-            text-align: center;
-            background: white;
-            color: black;
-        }
+    /* Section Contact */
+    .contact-section {
+        padding: 50px 20px;
+        text-align: center;
+        background: white;
+        color: black;
+    }
 
-        form {
-            max-width: 500px;
-            margin: 0 auto;
-            text-align: left;
-        }
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: left;
+    }
 
-        form label {
-            font-size: 1em;
-            font-weight: bold;
-        }
+    form label {
+        font-size: 1em;
+        font-weight: bold;
+    }
 
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+    form input, form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
 
-        form button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background: black;
-            color: white;
-            font-size: 1em;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+    form button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background: black;
+        color: white;
+        font-size: 1em;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
 
-        form button:hover {
-            background: #333;
-        }
+    form button:hover {
+        background: #333;
+    }
 
-        /* Footer */
-        footer {
-            background: black;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-    </style>
+    /* Footer */
+    footer {
+        background: black;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+    }
+</style>
 </head>
 <body>
     <header>
