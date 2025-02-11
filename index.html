@@ -14,31 +14,6 @@
             color: black;
             background: linear-gradient(135deg, #f0f0f0, #d9e4f5, #f8d7e0);
             overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Effets de symboles en arrière-plan */
-        .background-symbols {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .symbol {
-            position: absolute;
-            font-size: 2rem;
-            color: rgba(0, 0, 0, 0.1);
-            animation: float 10s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(20px); }
-            100% { transform: translateY(0px); }
         }
 
         /* Bandeau d'accueil (menu fixe) */
@@ -67,7 +42,7 @@
             color: gray;
         }
 
-        /* Sections animées */
+        /* Sections */
         .section {
             display: flex;
             justify-content: center;
@@ -76,6 +51,40 @@
             text-align: center;
             font-size: 2.5em;
             font-weight: bold;
+        }
+
+        /* Final Sections (Une Réflexion & Des Actions) */
+        .final-sections {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            color: black;
+            height: 80vh;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-top: 20px;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .final-sections a {
+            text-decoration: none;
+            color: black;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 2px solid black;
+            transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+
+        .final-sections a:hover {
+            background: black;
+            color: white;
+            transform: scale(1.05);
         }
 
         /* Section Contact */
@@ -138,8 +147,6 @@
         </nav>
     </header>
 
-    <div class="background-symbols"></div>
-
     <div id="section1" class="section">
         <p>S'investir aujourd'hui pour façonner l'avenir.</p>
     </div>
@@ -180,26 +187,13 @@
                 let position = window.scrollY;
                 let target = document.getElementById('final-sections').offsetTop;
                 let interval = setInterval(() => {
-                    if (position < target) {
-                        position += 5;
-                        window.scrollTo(0, position);
-                    } else {
+                    position += 8;
+                    window.scrollTo(0, position);
+                    if (position >= target) {
                         clearInterval(interval);
                     }
-                }, 10);
+                }, 15);
             }, 2000);
-
-            const symbols = ['★', '◇', '✦', '✧', '⬢', '✺'];
-            const container = document.querySelector('.background-symbols');
-            for (let i = 0; i < 15; i++) {
-                let span = document.createElement('span');
-                span.classList.add('symbol');
-                span.innerText = symbols[Math.floor(Math.random() * symbols.length)];
-                span.style.left = Math.random() * 100 + 'vw';
-                span.style.top = Math.random() * 100 + 'vh';
-                span.style.fontSize = Math.random() * 2 + 1 + 'rem';
-                container.appendChild(span);
-            }
         });
     </script>
 </body>
