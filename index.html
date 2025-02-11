@@ -14,7 +14,31 @@
             color: black;
             background: linear-gradient(135deg, #f0f0f0, #d9e4f5, #f8d7e0);
             overflow-x: hidden;
-            transition: background 1s ease-in-out;
+            position: relative;
+        }
+
+        /* Effets de symboles en arrière-plan */
+        .background-symbols {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .symbol {
+            position: absolute;
+            font-size: 2rem;
+            color: rgba(0, 0, 0, 0.1);
+            animation: float 10s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+            100% { transform: translateY(0px); }
         }
 
         /* Bandeau d'accueil (menu fixe) */
@@ -52,44 +76,6 @@
             text-align: center;
             font-size: 2.5em;
             font-weight: bold;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Boutons de navigation finale */
-        .final-sections {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 50px;
-            height: 80vh;
-            text-align: center;
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-
-        .final-sections a {
-            text-decoration: none;
-            color: black;
-            padding: 15px 30px;
-            font-size: 1.5em;
-            font-weight: bold;
-            border-radius: 5px;
-            border: 2px solid black;
-            transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
-        }
-
-        .final-sections a:hover {
-            background: black;
-            color: white;
-            transform: scale(1.05);
         }
 
         /* Section Contact */
@@ -106,11 +92,6 @@
             text-align: left;
         }
 
-        form label {
-            font-size: 1em;
-            font-weight: bold;
-        }
-
         form input, form textarea {
             width: 100%;
             padding: 10px;
@@ -121,7 +102,6 @@
         }
 
         form button {
-            display: block;
             width: 100%;
             padding: 10px;
             background: black;
@@ -158,6 +138,8 @@
         </nav>
     </header>
 
+    <div class="background-symbols"></div>
+
     <div id="section1" class="section">
         <p>S'investir aujourd'hui pour façonner l'avenir.</p>
     </div>
@@ -175,24 +157,49 @@
         <a href="action/index.html">Des actions</a>
     </div>
 
+    <div id="contact" class="contact-section">
+        <h2>Contactez-nous</h2>
+        <form action="https://formspree.io/f/xyzkwqla" method="POST">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
+    </footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll(".section");
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            }, { threshold: 0.3 });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-
             setTimeout(() => {
-                document.getElementById('final-sections').scrollIntoView({ behavior: 'smooth' });
-            }, 3000);
+                let position = window.scrollY;
+                let target = document.getElementById('final-sections').offsetTop;
+                let interval = setInterval(() => {
+                    if (position < target) {
+                        position += 5;
+                        window.scrollTo(0, position);
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 10);
+            }, 2000);
+
+            const symbols = ['★', '◇', '✦', '✧', '⬢', '✺'];
+            const container = document.querySelector('.background-symbols');
+            for (let i = 0; i < 15; i++) {
+                let span = document.createElement('span');
+                span.classList.add('symbol');
+                span.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+                span.style.left = Math.random() * 100 + 'vw';
+                span.style.top = Math.random() * 100 + 'vh';
+                span.style.fontSize = Math.random() * 2 + 1 + 'rem';
+                container.appendChild(span);
+            }
         });
     </script>
 </body>
