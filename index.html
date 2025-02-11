@@ -5,154 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="À Bonne École - Promouvoir une éducation inclusive et inspirante.">
     <title>À Bonne École</title>
-   <style>
-    /* Styles de base */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        color: white;
-        background: linear-gradient(to bottom, black, #1a1a1a 10%, #333 25%, #888 50%, #ddd 70%, white 90%);
-        min-height: 400vh;
-    }
+    <style>
+        /* Styles de base */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+            background: white;
+            overflow-x: hidden;
+        }
 
-    /* Bandeau d'accueil (menu fixe) */
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: black;
-        color: white;
-        padding: 15px 0;
-        text-align: center;
-        z-index: 1000;
-    }
+        /* Bandeau d'accueil (menu fixe) */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin: 0 15px;
-        font-weight: bold;
-        transition: color 0.3s ease;
-    }
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
-    nav a:hover {
-        color: gray;
-    }
+        nav a:hover {
+            color: gray;
+        }
 
-    /* Sections */
-    .section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        text-align: center;
-        font-size: 2.5em;
-        font-weight: bold;
-        padding: 0 20px;
-    }
+        /* Sections animées */
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
 
-    .section:nth-child(1), .section:nth-child(2) {
-        color: white;
-    }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    .section:nth-child(2) p {
-        color: #eeeeee;
-    }
+        /* Boutons de navigation finale */
+        .final-sections {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            height: 80vh;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
 
-    .section:nth-child(3) {
-        color: black;
-    }
+        .final-sections a {
+            text-decoration: none;
+            color: black;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 2px solid black;
+            transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
 
-    /* Final Sections (Une Réflexion & Des Actions) */
-    .final-sections {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        background: transparent;
-        color: black;
-        height: 80vh;
-        text-align: center;
-        font-size: 1.8em;
-        font-weight: bold;
-        margin-top: 20px;
-        gap: 50px;
-        flex-wrap: wrap;
-    }
+        .final-sections a:hover {
+            background: black;
+            color: white;
+            transform: scale(1.05);
+        }
 
-    .final-sections a {
-        text-decoration: none;
-        color: black;
-        padding: 15px 30px;
-        font-size: 1.5em;
-        font-weight: bold;
-        border-radius: 5px;
-        border: 2px solid black;
-        transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
-    }
+        /* Section Contact */
+        .contact-section {
+            padding: 50px 20px;
+            text-align: center;
+            background: white;
+            color: black;
+        }
 
-    .final-sections a:hover {
-        background: black;
-        color: white;
-        transform: scale(1.05);
-    }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
 
-    /* Section Contact */
-    .contact-section {
-        padding: 50px 20px;
-        text-align: center;
-        background: white;
-        color: black;
-    }
+        form label {
+            font-size: 1em;
+            font-weight: bold;
+        }
 
-    form {
-        max-width: 500px;
-        margin: 0 auto;
-        text-align: left;
-    }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-    form label {
-        font-size: 1em;
-        font-weight: bold;
-    }
+        form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: black;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
 
-    form input, form textarea {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
+        form button:hover {
+            background: gray;
+        }
 
-    form button {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        background: black;
-        color: white;
-        font-size: 1em;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-    }
-
-    form button:hover {
-        background: #333;
-    }
-
-    /* Footer */
-    footer {
-        background: black;
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-    }
-</style>
+        /* Footer */
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -174,7 +166,7 @@
     </div>
 
     <div id="section3" class="section">
-        <p style="color: black;">Penser l'alternative et poursuivre la réalisation d'un idéal.</p>
+        <p>Penser l'alternative et poursuivre la réalisation d'un idéal.</p>
     </div>
 
     <div class="final-sections">
@@ -198,5 +190,22 @@
     <footer>
         <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".section");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
