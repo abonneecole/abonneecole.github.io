@@ -54,18 +54,19 @@
             position: relative;
         }
 
-/* Flèche noire stylisée sans coin visible */
+/* Flèche noire stylisée épurée */
 .scroll-down {
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
-    width: 20px;
-    height: 20px;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
+    width: 15px;
+    height: 15px;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    background: transparent;
     animation: bounce 1.5s infinite;
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
