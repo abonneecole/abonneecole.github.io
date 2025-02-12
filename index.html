@@ -54,17 +54,19 @@
             position: relative;
         }
 
-        /* Flèche blanche */
-        .scroll-down {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2em;
-            color: white;
-            animation: bounce 2s infinite;
-        }
-
+        /* Flèche noire stylisée */
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+    width: 30px;
+    height: 50px;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    animation: bounce 1.5s infinite;
+    box-sizing: border-box;
+}
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
                 transform: translateX(-50%) translateY(0);
