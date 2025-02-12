@@ -60,13 +60,25 @@
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     border-right: 3px solid black;
     border-bottom: 3px solid black;
     background: transparent;
+    box-sizing: border-box;
     animation: bounce 1.5s infinite;
-    box-sizing: content-box;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0) rotate(45deg);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px) rotate(45deg);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px) rotate(45deg);
+    }
 }
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
