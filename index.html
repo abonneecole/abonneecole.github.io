@@ -54,44 +54,31 @@
             position: relative;
         }
 
-/* Flèche noire minimaliste */
-.scroll-down {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 15px solid black;
-    animation: bounce 1.5s infinite;
-}
+        /* Flèche noire minimaliste */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 15px solid black;
+            animation: bounce 1.5s infinite;
+        }
 
-.scroll-down::after {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: -10px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 15px solid black;
-    opacity: 0.5;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    40% {
-        transform: translateX(-50%) translateY(-10px);
-    }
-    60% {
-        transform: translateX(-50%) translateY(-5px);
-    }
-}
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
 
         /* Final Sections (Une Réflexion & Des Actions) */
         .final-sections {
@@ -189,7 +176,7 @@
 
     <div id="section1" class="section">
         <p>S'investir aujourd'hui pour façonner l'avenir.</p>
-        <div class="scroll-down">&#x2193;</div>
+        <div class="scroll-down"></div>
     </div>
 
     <div id="section2" class="section">
