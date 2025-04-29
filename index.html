@@ -11,7 +11,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      color: black;
+      color: white;
       background: linear-gradient(to bottom, #ffffff, #e0f0ff);
       overflow-x: hidden;
     }
@@ -42,7 +42,7 @@
       color: gray;
     }
 
-    /* Sections */
+    /* Sections avec fond défilant */
     .section {
       display: flex;
       justify-content: center;
@@ -57,6 +57,15 @@
       background-position: center;
       background-attachment: fixed;
       color: white;
+    }
+
+    /* Texte lisible */
+    .section p,
+    .final-sections a,
+    .adhesion-section p,
+    .contact-section h2,
+    .contact-section label {
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
     }
 
     /* Flèche noire minimaliste */
@@ -91,47 +100,31 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      background: transparent;
-      color: black;
-      height: 80vh;
-      text-align: center;
-      font-size: 1.8em;
-      font-weight: bold;
-      margin-top: 20px;
       gap: 50px;
       flex-wrap: wrap;
+      font-size: 1.8em;
+      font-weight: bold;
+      text-align: center;
     }
 
     .final-sections a {
       text-decoration: none;
-      color: black;
+      color: white;
       padding: 15px 30px;
       font-size: 1.5em;
       font-weight: bold;
       border-radius: 5px;
-      border: 2px solid black;
+      border: 2px solid white;
       transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
     }
 
     .final-sections a:hover {
-      background: black;
-      color: white;
+      background: white;
+      color: black;
       transform: scale(1.05);
     }
 
-    /* Section Adhésion avec fond image */
-    .adhesion-section {
-      padding: 100px 20px;
-      text-align: center;
-      background-image: url('assets/fond.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      font-size: 2em;
-      font-weight: bold;
-      background-attachment: fixed;
-    }
-
+    /* Section Adhésion */
     .adhesion-section a {
       display: inline-block;
       margin-top: 20px;
@@ -149,14 +142,7 @@
     }
 
     /* Section Contact */
-    .contact-section {
-      padding: 50px 20px;
-      text-align: center;
-      background: white;
-      color: black;
-    }
-
-    form {
+    .contact-section form {
       max-width: 500px;
       margin: 0 auto;
       text-align: left;
@@ -225,17 +211,17 @@
   <p>Transmettre à notre tour, et poursuivre la réalisation d'un idéal.</p>
 </div>
 
-<div class="final-sections" id="final-sections">
-  <a href="réflexion/index.html">Une réflexion</a>
-  <a href="action/index.html">Des actions</a>
-</div>
-
-<div id="adhesion" class="adhesion-section">
+<div id="adhesion" class="section adhesion-section">
   <p>Rejoignez l'aventure !</p>
   <a href="https://www.helloasso.com/associations/a-bonne-ecole/adhesions/adhesion-a-l-association-a-bonne-ecole-abe" target="_blank">Adhérer</a>
 </div>
 
-<div id="contact" class="contact-section">
+<div id="final-sections" class="section final-sections">
+  <a href="réflexion/index.html">Une réflexion</a>
+  <a href="action/index.html">Des actions</a>
+</div>
+
+<div id="contact" class="section contact-section">
   <h2>Contactez-nous</h2>
   <form action="https://formspree.io/f/xyzkwqla" method="POST">
     <label for="name">Nom :</label>
