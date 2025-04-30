@@ -1,134 +1,252 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À Bonne École</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      color: white;
-      background: url('assets/fond.jpg') no-repeat center center fixed;
-      background-size: cover;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="À Bonne École - Promouvoir une éducation inclusive et inspirante.">
+    <title>À Bonne École</title>
+    <style>
+        /* Styles de base */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+            background: linear-gradient(135deg, #f0f0f0, #d9e4f5, #f8d7e0);
+            overflow-x: hidden;
+        }
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.8);
-      color: black;
-      padding: 10px 0;
-      text-align: center;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+        /* Bandeau d'accueil (menu fixe) */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-    nav a {
-      color: black;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
-    nav a:hover {
-      color: gray;
-    }
+        nav a:hover {
+            color: gray;
+        }
 
-    .section {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-top: 80px; /* pour compenser le header */
-      text-align: center;
-      backdrop-filter: brightness(0.7); /* assombrit un peu pour meilleure lisibilité */
-    }
+        /* Sections */
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            position: relative;
+        }
 
-    .scroll-down {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 15px solid white;
-      animation: bounce 1.5s infinite;
-    }
+        /* Flèche noire minimaliste */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 15px solid black;
+            animation: bounce 1.5s infinite;
+        }
 
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-      }
-      40% {
-        transform: translateX(-50%) translateY(-10px);
-      }
-      60% {
-        transform: translateX(-50%) translateY(-5px);
-      }
-    }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
 
-    footer {
-      background: black;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
-  </style>
+        /* Final Sections (Une Réflexion & Des Actions) */
+        .final-sections {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            color: black;
+            height: 80vh;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-top: 20px;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .final-sections a {
+            text-decoration: none;
+            color: black;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 2px solid black;
+            transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+
+        .final-sections a:hover {
+            background: black;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Section Adhésion */
+        .adhesion-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 80vh;
+            background: #ffffff;
+            color: black;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .adhesion-section a {
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: black;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .adhesion-section a:hover {
+            background: gray;
+            transform: scale(1.05);
+        }
+
+        /* Section Contact */
+        .contact-section {
+            padding: 50px 20px;
+            text-align: center;
+            background: white;
+            color: black;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background: black;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        form button:hover {
+            background: gray;
+        }
+
+        /* Footer */
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <h1>À Bonne École</h1>
+        <nav>
+            <a href="#section1">Accueil</a>
+            <a href="réflexion/index.html">Notre Vision</a>
+            <a href="action/index.html">Nos Actions</a>
+            <a href="#adhesion">Adhérer</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-<header>
-  <h1>À Bonne École</h1>
-  <nav>
-    <a href="#section1">Accueil</a>
-    <a href="#section2">Notre Vision</a>
-    <a href="#section3">Nos Actions</a>
-    <a href="#adhesion">Adhésion</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <div id="section1" class="section">
+        <p>S'investir aujourd'hui pour façonner l'avenir.</p>
+        <div class="scroll-down"></div>
+    </div>
 
-<div id="section1" class="section">
-  <div>
-    <h2>S'investir aujourd'hui pour façonner l'avenir</h2>
-    <div class="scroll-down"></div>
-  </div>
-</div>
+    <div id="section2" class="section">
+        <p>Semer des rêves, cultiver des vocations.</p>
+    </div>
 
-<div id="section2" class="section">
-  <h2>Semer des rêves, cultiver des vocations</h2>
-</div>
+    <div id="section3" class="section">
+        <p>Transmettre à notre tour, et poursuivre la réalisation d'un idéal.</p>
+    </div>
 
-<div id="section3" class="section">
-  <h2>Transmettre, poursuivre un idéal</h2>
-</div>
+    <div class="final-sections" id="final-sections">
+        <a href="réflexion/index.html">Une réflexion</a>
+        <a href="action/index.html">Des actions</a>
+    </div>
 
-<div id="adhesion" class="section">
-  <h2>Rejoignez l'aventure !</h2>
-  <a href="https://www.helloasso.com/" style="color: white; text-decoration: underline;">Adhérer</a>
-</div>
+    <!-- Section Adhésion -->
+    <div id="adhesion" class="adhesion-section">
+        <h2>Rejoignez l'aventure !</h2>
+        <a href="https://www.helloasso.com/associations/a-bonne-ecole/adhesions/adhesion-a-l-association-a-bonne-ecole" target="_blank">
+            Adhérez ici
+        </a>
+    </div>
 
-<div id="contact" class="section">
-  <h2>Contactez-nous</h2>
-  <form action="https://formspree.io/f/xyzkwqla" method="POST" style="max-width: 500px; margin: auto;">
-    <input type="text" name="name" placeholder="Votre nom" required style="width:100%; padding:10px; margin-bottom:10px;">
-    <input type="email" name="email" placeholder="Votre email" required style="width:100%; padding:10px; margin-bottom:10px;">
-    <textarea name="message" rows="5" placeholder="Votre message" required style="width:100%; padding:10px; margin-bottom:10px;"></textarea>
-    <button type="submit" style="width:100%; padding:10px; background:black; color:white; border:none;">Envoyer</button>
-  </form>
-</div>
+    <div id="contact" class="contact-section">
+        <h2>Contactez-nous</h2>
+        <form action="https://formspree.io/f/xyzkwqla" method="POST">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
 
-<footer>
-  <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
-</footer>
-
+    <footer>
+        <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
