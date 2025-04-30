@@ -5,61 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À Bonne École</title>
   <style>
-    /* Style général */
     body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-image: url('assets/fond.jpg'); /* UNE seule grande image */
-      background-size: cover; /* Couvre tout */
-      background-attachment: fixed; /* Effet de défilement */
-      background-position: center top; /* Départ du haut */
-      background-repeat: no-repeat;
       color: white;
+      background: url('assets/fond.jpg') no-repeat center center fixed;
+      background-size: cover;
       overflow-x: hidden;
     }
 
-    /* Menu fixe */
     header {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.8);
       color: black;
-      padding: 15px 0;
+      padding: 10px 0;
       text-align: center;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     nav a {
       color: black;
-      text-decoration: none;
       margin: 0 15px;
+      text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
 
     nav a:hover {
       color: gray;
     }
 
-    /* Sections */
     .section {
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding-top: 80px; /* pour compenser le header */
       text-align: center;
-      padding: 60px 20px;
-      font-size: 2.5em;
-      font-weight: bold;
-      position: relative;
-      background: transparent; /* Pas d'image locale */
+      backdrop-filter: brightness(0.7); /* assombrit un peu pour meilleure lisibilité */
     }
 
-    /* Flèche de descente */
     .scroll-down {
       position: absolute;
       bottom: 20px;
@@ -85,45 +74,6 @@
       }
     }
 
-    /* Formulaire contact */
-    .contact-section {
-      padding: 50px 20px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.9);
-      color: black;
-    }
-
-    form {
-      max-width: 500px;
-      margin: auto;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    form button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      background: black;
-      color: white;
-      font-size: 1em;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    form button:hover {
-      background: gray;
-    }
-
-    /* Footer */
     footer {
       background: black;
       color: white;
@@ -147,36 +97,32 @@
 </header>
 
 <div id="section1" class="section">
-  <p>S'investir aujourd'hui pour façonner l'avenir.</p>
-  <div class="scroll-down"></div>
+  <div>
+    <h2>S'investir aujourd'hui pour façonner l'avenir</h2>
+    <div class="scroll-down"></div>
+  </div>
 </div>
 
 <div id="section2" class="section">
-  <p>Semer des rêves, cultiver des vocations.</p>
+  <h2>Semer des rêves, cultiver des vocations</h2>
 </div>
 
 <div id="section3" class="section">
-  <p>Transmettre à notre tour, et poursuivre la réalisation d'un idéal.</p>
+  <h2>Transmettre, poursuivre un idéal</h2>
 </div>
 
 <div id="adhesion" class="section">
-  <p>Rejoignez l'aventure !</p>
-  <a href="https://www.helloasso.com/associations/a-bonne-ecole/adhesions/adhesion-a-l-association-a-bonne-ecole-abe" target="_blank" style="background: rgba(0,0,0,0.7); padding:10px 20px; border-radius:8px; color:white; text-decoration:none;">Adhérer</a>
+  <h2>Rejoignez l'aventure !</h2>
+  <a href="https://www.helloasso.com/" style="color: white; text-decoration: underline;">Adhérer</a>
 </div>
 
-<div id="contact" class="contact-section">
+<div id="contact" class="section">
   <h2>Contactez-nous</h2>
-  <form action="https://formspree.io/f/xyzkwqla" method="POST">
-    <label for="name">Nom :</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="message">Message :</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-
-    <button type="submit">Envoyer</button>
+  <form action="https://formspree.io/f/xyzkwqla" method="POST" style="max-width: 500px; margin: auto;">
+    <input type="text" name="name" placeholder="Votre nom" required style="width:100%; padding:10px; margin-bottom:10px;">
+    <input type="email" name="email" placeholder="Votre email" required style="width:100%; padding:10px; margin-bottom:10px;">
+    <textarea name="message" rows="5" placeholder="Votre message" required style="width:100%; padding:10px; margin-bottom:10px;"></textarea>
+    <button type="submit" style="width:100%; padding:10px; background:black; color:white; border:none;">Envoyer</button>
   </form>
 </div>
 
