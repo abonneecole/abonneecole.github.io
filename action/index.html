@@ -10,8 +10,9 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: url('../assets/conference.jpeg') no-repeat center center fixed; /* Remplace "ton-image.jpg" par le nom de ton fichier */
+      background: url('../assets/ton-image.jpg') no-repeat center center fixed; /* Remplace "ton-image.jpg" par le nom de ton fichier */
       background-size: cover;
+      background-position: center center;
       color: black;
       text-align: center;
     }
@@ -72,6 +73,9 @@
 
     /* Responsive Design pour les petits écrans */
     @media (max-width: 768px) {
+      body {
+        background-attachment: scroll; /* Désactive le fond fixe sur mobile */
+      }
       .event-card h3 {
         font-size: 1.2em;
       }
