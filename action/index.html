@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nos Actions - À Bonne École</title>
   <style>
-    /* Styles généraux */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background: white url('../assets/ecole_athenes.jpg') no-repeat center center fixed;
       background-size: cover;
-      background-position: center center;
       color: black;
       text-align: center;
     }
@@ -20,11 +18,9 @@
     header {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
       background: black;
       padding: 15px 0;
-      text-align: center;
       z-index: 1000;
     }
 
@@ -49,28 +45,28 @@
       text-decoration: underline;
     }
 
-    .content {
-      margin-top: 100px;
+    main {
+      margin-top: 110px;
       padding: 20px;
     }
 
-    /* Conteneur des événements */
+    h2 {
+      margin-bottom: 20px;
+    }
+
     .events-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      margin-top: 40px;
     }
 
-    /* Carte d'événement */
     .event-card {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.85);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       width: 250px;
-      text-align: center;
       transition: transform 0.3s ease-in-out;
     }
 
@@ -87,12 +83,11 @@
       color: black;
     }
 
-    /* Section détails de conférence */
     .conference-details {
       background: white;
       color: black;
       padding: 40px 20px;
-      margin: 40px auto;
+      margin: 50px auto;
       max-width: 800px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -107,20 +102,17 @@
       line-height: 1.6;
     }
 
-    /* Footer */
     footer {
       background: black;
       color: white;
       text-align: center;
       padding: 20px 0;
-      margin-top: 30px;
+      margin-top: 50px;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       body {
         background-attachment: scroll;
-        background-size: cover;
       }
 
       header h1 {
@@ -134,14 +126,14 @@
 
       .event-card {
         width: 90%;
-        margin: 0 auto 20px;
+        margin: 0 auto;
       }
 
       .conference-details {
         padding: 20px 15px;
       }
 
-      .content {
+      main {
         margin-top: 130px;
         padding: 15px;
       }
@@ -161,37 +153,38 @@
     </nav>
   </header>
 
-  <div class="content">
-    <h2>Transformer des idées en initiatives concrètes</h2>
-    
-    <div class="events-container">
-      <div class="event-card">
-        <h3>Passée</h3>
-        <p>Conférence à l'École normale supérieure : "l'Éducation face aux défis du XXIe siècle".</p>
+  <main>
+    <section>
+      <h2>Transformer des idées en initiatives concrètes</h2>
+      <div class="events-container">
+        <article class="event-card">
+          <h3>Événement passé</h3>
+          <p>Conférence à l'École normale supérieure : "L'Éducation face aux défis du XXIe siècle".</p>
+        </article>
+        <article class="event-card">
+          <h3>Événement passé</h3>
+          <p>Support à la commission des affaires culturelles de l'Assemblée nationale.</p>
+        </article>
+        <article class="event-card">
+          <h3>Événement passé</h3>
+          <p>Création d'un conseil municipal des jeunes.</p>
+        </article>
       </div>
-      <div class="event-card">
-        <h3>Passé</h3>
-        <p>Support à la commission des affaires culturelles de l'Assemblée nationale</p>
-      </div>
-      <div class="event-card">
-        <h3>Passé</h3>
-        <p>Création d'un conseil municipal des jeunes</p>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="conference-details">
-    <h2>Conférence à l'École normale supérieure</h2>
-    <p><strong>Titre :</strong> L'Éducation face aux défis du XXIe siècle</p>
-    <p><strong>Date :</strong> 25 avril 2025</p>
-    <p><strong>Intervenants :</strong> Pierre-Michel Menger (Collège de France), Sophie Vénétitay (Snes-FSU), Edouard Geffray (Ex-Dgesco et Conseil d'État), et Raphael Doan (Magistrat et essayiste).</p>
-    <p>
-      Vous étiez près d'une centaine à avoir participé à cette réfléxion collective lors de ces échanges passionnants !
-      Divers sujets ont été abordés : l'intelligence artificielle (IA), la chute démographique, la tension entre égalité et efficacité à l'école ou encore les défis démocratiques !
-      Un dialogue riche entre expériences vécues, savoirs académiques et engagements concrets.
-    </p>
-    <p>Merci, et à très vite !</p>
-  </div>
+    <section class="conference-details">
+      <h2>Conférence à l'École normale supérieure</h2>
+      <p><strong>Titre :</strong> L'Éducation face aux défis du XXIe siècle</p>
+      <p><strong>Date :</strong> 25 avril 2025</p>
+      <p><strong>Intervenants :</strong> Pierre-Michel Menger (Collège de France), Sophie Vénétitay (Snes-FSU), Édouard Geffray (ex-Dgesco, Conseil d'État), Raphaël Doan (magistrat, essayiste).</p>
+      <p>
+        Vous étiez près d'une centaine à avoir participé à cette réflexion collective lors de ces échanges passionnants !
+        Divers sujets ont été abordés : intelligence artificielle, chute démographique, tension entre égalité et efficacité à l'école, défis démocratiques…
+        Un dialogue riche entre expériences vécues, savoirs académiques et engagements concrets.
+      </p>
+      <p>Merci, et à très vite !</p>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
