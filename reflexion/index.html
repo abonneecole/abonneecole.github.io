@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réflexion - À Bonne École</title>
     <style>
-        /* Styles généraux */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background: url('../assets/ecole_athenes.jpg') no-repeat center center fixed;
             background-size: cover;
+            background-attachment: fixed;
             color: black;
             text-align: center;
+            min-height: 100vh;
         }
 
-        /* Menu fixe */
         header {
             position: fixed;
             top: 0;
@@ -49,13 +49,11 @@
             text-decoration: underline;
         }
 
-        /* Style pour le contenu */
         .content {
             margin-top: 80px;
             padding: 20px;
         }
 
-        /* Section Texte/Tribune */
         .tribute-section {
             text-align: center;
             margin: 50px auto;
@@ -72,7 +70,8 @@
             color: black;
         }
 
-        .tribute-section p {
+        .tribute-section p,
+        .tribute-section ul li {
             font-size: 1.2em;
             color: black;
             line-height: 1.6;
@@ -84,13 +83,6 @@
             max-width: 90%;
         }
 
-        .tribute-section ul li {
-            font-size: 1em;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        /* Section Études */
         .study-section {
             text-align: left;
             margin: 50px auto;
@@ -117,7 +109,6 @@
             margin: 0 auto;
         }
 
-        /* Footer */
         footer {
             background: black;
             color: white;
@@ -126,9 +117,8 @@
             margin-top: 30px;
         }
 
-        /* Responsive Design pour les petits écrans */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            /* Menu */
             header h1 {
                 font-size: 1.2em;
             }
@@ -136,10 +126,11 @@
             nav a {
                 font-size: 0.9em;
                 margin: 0 8px;
+                display: inline-block;
             }
 
-            /* Sections */
-            .tribute-section, .study-section {
+            .tribute-section,
+            .study-section {
                 max-width: 90%;
                 margin: 20px auto;
                 padding: 15px;
@@ -149,7 +140,8 @@
                 font-size: 1.6em;
             }
 
-            .tribute-section p {
+            .tribute-section p,
+            .tribute-section ul li {
                 font-size: 1em;
             }
 
@@ -166,8 +158,9 @@
                 height: 300px;
             }
 
-            footer {
-                padding: 15px 0;
+            body {
+                background-attachment: scroll;
+                background-size: cover;
             }
         }
     </style>
@@ -179,7 +172,10 @@
         <h1>Réflexion - À Bonne École</h1>
         <nav>
             <a href="../index.html">Accueil</a>
-            <a href="../action/index.html">Action</a>
+            <a href="../vision/index.html">Notre Vision</a>
+            <a href="../action/index.html">Nos Actions</a>
+            <a href="../adherer/index.html">Adhérer</a>
+            <a href="../contact/index.html">Contact</a>
         </nav>
     </header>
 
@@ -188,15 +184,12 @@
         <div class="tribute-section">
             <h2>Une conviction</h2>
             <p><strong>Les défis du XXIᵉ siècle sont d'abord ceux des citoyens de demain.</strong></p>
-
             <p>Des enjeux :</p>
-
             <ul>
                 <li><strong>Un enjeu démocratique:</strong> Transmettre une culture humaniste, raviver la promesse républicaine, donner le goût de l'engagement.</li>
                 <li><strong>Un enjeu civique :</strong> Cultiver la curiosité, éveiller des passions et des vocations, permettre à chacun de s'épanouir en son for intérieur et de s’ouvrir à la vie.</li>
                 <li><strong>Un enjeu stratégique :</strong> Encourager la réflexion, la concertation et la prise d'initiative pour répondre aux défis contemporains.</li>
             </ul>
-
             <p><strong>Notre rôle :</strong> À Bonne École cherche à mobiliser les consciences. Reconnaissants de ce que nous avons nous-mêmes reçus, nous croyons en la force de la transmission, du partage et de l'action.</p>
         </div>
 
