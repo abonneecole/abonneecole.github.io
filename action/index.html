@@ -10,12 +10,13 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: url('../assets/ecole_athenes.jpg') no-repeat center center fixed;
+      background: white url('../assets/ecole_athenes.jpg') no-repeat center center fixed;
       background-size: cover;
       background-position: center center;
       color: black;
       text-align: center;
     }
+
     header {
       position: fixed;
       top: 0;
@@ -26,18 +27,28 @@
       text-align: center;
       z-index: 1000;
     }
+
     header h1 {
       margin: 0;
       color: white;
+      font-size: 1.5em;
     }
+
+    nav {
+      margin-top: 10px;
+    }
+
     nav a {
       color: white;
       text-decoration: none;
       margin: 0 10px;
+      font-size: 1em;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     .content {
       margin-top: 100px;
       padding: 20px;
@@ -62,13 +73,16 @@
       text-align: center;
       transition: transform 0.3s ease-in-out;
     }
+
     .event-card:hover {
       transform: scale(1.05);
     }
+
     .event-card h3 {
       margin-top: 0;
       color: black;
     }
+
     .event-card p {
       color: black;
     }
@@ -84,41 +98,51 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       text-align: left;
     }
+
     .conference-details h2 {
       text-align: center;
     }
+
     .conference-details p {
       line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 30px;
     }
 
     /* Responsive Design */
     @media (max-width: 768px) {
       body {
         background-attachment: scroll;
+        background-size: cover;
       }
-      .event-card h3 {
-        font-size: 1.2em;
-      }
-      .event-card p {
-        font-size: 1em;
-      }
-      .event-card {
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto 20px;
-      }
-      .events-container {
-        justify-content: center;
-        gap: 15px;
-      }
+
       header h1 {
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
+
       nav a {
         font-size: 0.9em;
+        margin: 0 6px;
       }
+
+      .event-card {
+        width: 90%;
+        margin: 0 auto 20px;
+      }
+
+      .conference-details {
+        padding: 20px 15px;
+      }
+
       .content {
-        margin-top: 120px;
+        margin-top: 130px;
         padding: 15px;
       }
     }
@@ -130,7 +154,10 @@
     <h1>Nos Actions - À Bonne École</h1>
     <nav>
       <a href="../index.html">Accueil</a>
-      <a href="../reflexion/index.html">Réflexion</a>
+      <a href="../vision/index.html">Notre Vision</a>
+      <a href="../action/index.html">Nos Actions</a>
+      <a href="../adhesion/index.html">Adhérer</a>
+      <a href="../contact/index.html">Contact</a>
     </nav>
   </header>
 
@@ -157,14 +184,13 @@
     <h2>Conférence à l'École normale supérieure</h2>
     <p><strong>Titre :</strong> L'Éducation face aux défis du XXIe siècle</p>
     <p><strong>Date :</strong> 25 avril 2025</p>
-    <p><strong>Intervenants :</strong> Pierre-Michel Menger (Collège de France), Sophie Vénétitay (Snes-FSU), Edouard Geffray (Ex-Dgesco et Conseil d'État), et Raphael Doan (Magistrat et essayiste). </p>
+    <p><strong>Intervenants :</strong> Pierre-Michel Menger (Collège de France), Sophie Vénétitay (Snes-FSU), Edouard Geffray (Ex-Dgesco et Conseil d'État), et Raphael Doan (Magistrat et essayiste).</p>
     <p>
-      Vous étiez près d'une centaine à avoir participé à cette réfléxion collective lors de ces échanges passionnants ! 
+      Vous étiez près d'une centaine à avoir participé à cette réfléxion collective lors de ces échanges passionnants !
       Divers sujets ont été abordés : l'intelligence artificielle (IA), la chute démographique, la tension entre égalité et efficacité à l'école ou encore les défis démocratiques !
       Un dialogue riche entre expériences vécues, savoirs académiques et engagements concrets.
-    <p>
-      Merci, et à très vite ! 
     </p>
+    <p>Merci, et à très vite !</p>
   </div>
 
   <footer>
