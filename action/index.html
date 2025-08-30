@@ -5,53 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nos Actions - À Bonne École</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
       background: white url('../assets/ecole_athenes.jpg') no-repeat center center fixed;
       background-size: cover;
       color: black;
       text-align: center;
+      scroll-behavior: smooth;
     }
 
+    /* HEADER */
     header {
       position: fixed;
       top: 0;
       width: 100%;
       background: black;
-      padding: 15px 0;
+      padding: 15px 20px;
       z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     header h1 {
       margin: 0;
       color: white;
-      font-size: 1.5em;
+      font-size: 1.4em;
     }
 
     nav {
-      margin-top: 10px;
+      display: flex;
+      gap: 15px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 10px;
       font-size: 1em;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #ffcc00;
     }
 
+    /* Burger menu */
+    .burger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links.active {
+      display: block;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: black;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: right;
+    }
+
+    .nav-links.active a {
+      display: block;
+      margin: 10px 0;
+    }
+
+    /* MAIN */
     main {
-      margin-top: 110px;
+      margin-top: 120px;
       padding: 20px;
     }
 
     h2 {
       margin-bottom: 20px;
+      font-size: 1.8em;
     }
 
     .events-container {
@@ -59,49 +106,58 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      margin-bottom: 50px;
     }
 
     .event-card {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      width: 250px;
-      transition: transform 0.3s ease-in-out;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+      width: 260px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
     .event-card:hover {
-      transform: scale(1.05);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
     }
 
     .event-card h3 {
       margin-top: 0;
-      color: black;
-    }
-
-    .event-card p {
-      color: black;
+      color: #222;
     }
 
     .conference-details {
       background: white;
       color: black;
-      padding: 40px 20px;
+      padding: 40px 25px;
       margin: 50px auto;
-      max-width: 800px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      max-width: 850px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
       text-align: left;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .conference-details.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .conference-details h2 {
       text-align: center;
+      margin-bottom: 15px;
     }
 
     .conference-details p {
       line-height: 1.6;
     }
 
+    /* FOOTER */
     footer {
       background: black;
       color: white;
@@ -110,23 +166,22 @@
       margin-top: 50px;
     }
 
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       body {
         background-attachment: scroll;
       }
 
-      header h1 {
-        font-size: 1.3em;
+      nav {
+        display: none;
       }
 
-      nav a {
-        font-size: 0.9em;
-        margin: 0 6px;
+      .burger {
+        display: flex;
       }
 
       .event-card {
         width: 90%;
-        margin: 0 auto;
       }
 
       .conference-details {
@@ -144,20 +199,25 @@
 <body>
   <header>
     <h1>Nos Actions - À Bonne École</h1>
-    <nav>
+    <nav class="nav-links">
       <a href="../index.html">Accueil</a>
       <a href="../vision/index.html">Notre Vision</a>
       <a href="../action/index.html">Nos Actions</a>
       <a href="../adhesion/index.html">Adhérer</a>
       <a href="../contact/index.html">Contact</a>
     </nav>
+    <div class="burger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </header>
 
   <main>
     <section>
       <h2>Transformer des idées en initiatives concrètes</h2>
       <div class="events-container">
-        <article class="event-card">
+        <article class="event-card" onclick="location.href='#conference-details'">
           <h3>Événement passé</h3>
           <p>Conférence à l'École normale supérieure : "L'Éducation face aux défis du XXIe siècle".</p>
         </article>
@@ -172,7 +232,7 @@
       </div>
     </section>
 
-    <section class="conference-details">
+    <section id="conference-details" class="conference-details">
       <h2>Conférence à l'École normale supérieure</h2>
       <p><strong>Titre :</strong> L'Éducation face aux défis du XXIe siècle</p>
       <p><strong>Date :</strong> 25 avril 2025</p>
@@ -189,5 +249,20 @@
   <footer>
     <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+
+    // Animation apparition au scroll
+    window.addEventListener('scroll', () => {
+      const details = document.querySelector('.conference-details');
+      const rect = details.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        details.classList.add('visible');
+      }
+    });
+  </script>
 </body>
 </html>
