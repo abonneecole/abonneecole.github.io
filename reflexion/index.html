@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À Bonne École</title>
+  <title>À Bonne École - Réflexion</title>
   <style>
+    /* --------- Style global --------- */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -12,28 +13,82 @@
       color: black;
     }
 
+    html {
+      scroll-behavior: smooth; /* défilement fluide */
+    }
+
+    /* --------- Header --------- */
     header {
       position: fixed;
       top: 0;
       width: 100%;
       background: white;
       z-index: 1000;
-      padding: 15px 0;
-      text-align: center;
+      padding: 15px 20px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.2em;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
     }
 
     nav a {
-      margin: 0 15px;
       text-decoration: none;
       color: black;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
       color: gray;
     }
 
+    /* --------- Menu burger (mobile) --------- */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: black;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* --------- Sections --------- */
     .section {
       height: 100vh;
       display: flex;
@@ -42,8 +97,17 @@
       font-size: 2em;
       text-align: center;
       padding: 40px 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
     }
 
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --------- Flèche scroll --------- */
     .scroll-down {
       position: absolute;
       bottom: 60px;
@@ -58,17 +122,12 @@
     }
 
     @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-      }
-      40% {
-        transform: translateX(-50%) translateY(-10px);
-      }
-      60% {
-        transform: translateX(-50%) translateY(-5px);
-      }
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
     }
 
+    /* --------- Boutons de navigation finale --------- */
     .final-sections {
       display: flex;
       flex-wrap: wrap;
@@ -85,7 +144,7 @@
       font-size: 1.5em;
       border: 2px solid black;
       padding: 15px 30px;
-      border-radius: 5px;
+      border-radius: 10px;
       transition: all 0.3s ease;
     }
 
@@ -95,6 +154,7 @@
       transform: scale(1.05);
     }
 
+    /* --------- Section adhésion --------- */
     .adhesion-section, .contact-section {
       padding: 60px 20px;
       background: white;
@@ -109,7 +169,7 @@
       color: white;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 10px;
       transition: all 0.3s ease;
     }
 
@@ -118,6 +178,7 @@
       transform: scale(1.05);
     }
 
+    /* --------- Formulaire --------- */
     form {
       max-width: 500px;
       margin: 0 auto;
@@ -140,7 +201,7 @@
       color: white;
       font-weight: bold;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
       cursor: pointer;
       transition: background 0.3s ease;
     }
@@ -149,6 +210,7 @@
       background: gray;
     }
 
+    /* --------- Footer --------- */
     footer {
       background: black;
       color: white;
@@ -157,7 +219,6 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <h1>À Bonne École</h1>
@@ -168,8 +229,14 @@
       <a href="#adhesion">Adhérer</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
+  <!-- Sections -->
   <div id="section1" class="section" style="position: relative;">
     <p>S'investir aujourd'hui pour façonner l'avenir.</p>
     <div class="scroll-down"></div>
@@ -183,16 +250,19 @@
     <p>Transmettre à notre tour, et poursuivre la réalisation d'un idéal.</p>
   </div>
 
+  <!-- Boutons vers autres pages -->
   <div class="final-sections">
     <a href="reflexion/index.html">Une réflexion</a>
     <a href="action/index.html">Des actions</a>
   </div>
 
+  <!-- Adhésion -->
   <div id="adhesion" class="adhesion-section">
     <h2>Rejoignez l'aventure !</h2>
     <a href="https://www.helloasso.com/associations/a-bonne-ecole/adhesions/adhesion-a-l-association-a-bonne-ecole" target="_blank">Adhérez ici</a>
   </div>
 
+  <!-- Contact -->
   <div id="contact" class="contact-section">
     <h2>Contactez-nous</h2>
     <form action="https://formspree.io/f/xyzkwqla" method="POST">
@@ -206,8 +276,33 @@
     </form>
   </div>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
   </footer>
+
+  <!-- JS pour animations et menu burger -->
+  <script>
+    // Apparition progressive des sections
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Menu burger
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
