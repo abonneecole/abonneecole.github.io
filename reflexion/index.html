@@ -1,168 +1,181 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À Bonne École - Une réflexion</title>
-  <style>
-    /* ---------- Styles globaux ---------- */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #f0f0f0, #d9e4f5, #f8d7e0);
-      color: black;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.5em;
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: black;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: gray;
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
-
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background: black;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: white;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
-    /* ---------- Sections ---------- */
-    .section {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2em;
-      text-align: center;
-      padding: 60px 20px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease-out;
-    }
-
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    footer {
-      background: black;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>À Bonne École</h1>
-    <nav>
-      <a href="../index.html">Accueil</a>
-      <a href="index.html">Une réflexion</a>
-      <a href="../action/index.html">Des actions</a>
-      <a href="../index.html#adhesion">Adhérer</a>
-      <a href="../index.html#contact">Contact</a>
-    </nav>
-    <div class="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </header>
-
-  <!-- Sections de réflexion -->
-  <div id="vision1" class="section" style="margin-top:80px;">
-    <p><strong>Notre réflexion :</strong><br>  
-    S’investir aujourd’hui pour façonner l’avenir.</p>
-  </div>
-
-  <div id="vision2" class="section">
-    <p>Semer des rêves, cultiver des vocations.</p>
-  </div>
-
-  <div id="vision3" class="section">
-    <p>Transmettre à notre tour et poursuivre la réalisation d’un idéal.</p>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
-  </footer>
-
-  <script>
-    // Intersection Observer pour animation au scroll
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          entry.target.classList.add('visible');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réflexion - À Bonne École</title>
+    <style>
+        /* Corps de la page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('../assets/ecole_athenes.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: black;
+            text-align: center;
         }
-      });
-    }, { threshold: 0.2 });
 
-    sections.forEach(section => observer.observe(section));
+        /* Menu fixe */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: black;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
 
-    // Menu burger
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-    toggle.addEventListener('click', () => nav.classList.toggle('active'));
-  </script>
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style pour le contenu */
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        /* Section Texte/Tribune */
+        .tribute-section {
+            text-align: center;
+            margin: 50px auto;
+            max-width: 80%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .tribute-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .tribute-section p {
+            font-size: 1.2em;
+            color: black;
+            line-height: 1.6;
+        }
+
+        .tribute-section ul {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 90%;
+        }
+
+        .tribute-section ul li {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        /* Section Études */
+        .study-section {
+            text-align: left;
+            margin: 50px auto;
+            max-width: 90%;
+        }
+
+        .study-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .study-section p {
+            font-size: 1.2em;
+            color: black;
+            margin-bottom: 15px;
+        }
+
+        .pdf-table iframe {
+            width: 60%;
+            height: 400px;
+            border: none;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu fixe -->
+    <header>
+        <h1>Réflexion - À Bonne École</h1>
+        <nav>
+            <a href="../index.html">Accueil</a>
+            <a href="../action/index.html">Action</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <!-- Section Texte/Tribune -->
+        <div class="tribute-section">
+            <h2>Une conviction</h2>
+            <p><strong>Le XXIe siècle sera humaniste, ou ne sera pas.</strong></p>
+            <p>Des constats :</p>
+            <ul>
+                <li> Une baisse mesurée de l’intérêt et du niveau des élèves.</li>
+                <li> Un déclin évalué de l’attractivité du métier d’enseignant, tant dans la rémunération pécuniaire que symbolique (reconnaissance sociale).</li>
+                <li> Une perte de confiance dans le modèle de l'école républicaine notamment face à la concurrence de divers modèles, tels que le secteur privé, l’intelligence artificielle et les réseaux sociaux.</li>
+            </ul>
+
+            <p>Des enjeux :</p>
+
+            <ul>
+                <li><strong>Un enjeu démocratique:</strong> Instruire des électeurs conscients des enjeux contemporains et favorables au débat républicain en tant que réponse collective.</li>
+                <li><strong>Un enjeu civique :</strong> Cultiver la curiosité, susciter des passions et des vocations, donner les clés pour s’épanouir personnellement et s’ouvrir à la vie. </li>
+                <li><strong>Un enjeu stratégique :</strong> Encourager la prise d’initiative et l’entrepreneuriat pour rester souverain dans le secteur économique.</li>
+            </ul>
+
+            <p><strong>Notre rôle :</strong> À Bonne École veut semer des idées, inspirer des vocations et mobiliser les consciences. Nous croyons en la force des générations actuelles et futures pour bâtir un avenir meilleur.</p>
+        </div>
+
+        <!-- Section Études -->
+        <div class="study-section">
+            <h2>Section Études</h2>
+            <p>Contribuez à étayer vos idéaux</p>
+            <p><em>Découvrez comment l'éducation influence directement la productivité du travail grâce à cette étude.</em></p>
+            <div class="pdf-table">
+                <iframe src="../assets/EducationvsLaborProductivity.pdf"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
+    </footer>
+
 </body>
 </html>
