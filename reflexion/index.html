@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À Bonne École - Notre Vision</title>
+  <title>À Bonne École - Une réflexion</title>
   <style>
-    /* --------- Style global --------- */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -107,7 +106,6 @@
       transform: translateY(0);
     }
 
-    /* --------- Footer --------- */
     footer {
       background: black;
       color: white;
@@ -121,21 +119,18 @@
     <h1>À Bonne École</h1>
     <nav>
       <a href="../index.html">Accueil</a>
-      <a href="index.html">Notre Vision</a>
-      <a href="../action/index.html">Nos Actions</a>
+      <a href="index.html">Une réflexion</a>
+      <a href="../action/index.html">Des actions</a>
       <a href="../index.html#adhesion">Adhérer</a>
       <a href="../index.html#contact">Contact</a>
     </nav>
     <div class="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
   </header>
 
-  <!-- Sections de contenu -->
   <div id="vision1" class="section" style="margin-top:80px;">
-    <p><strong>Notre vision :</strong><br>  
+    <p><strong>Notre réflexion :</strong><br>  
     S’investir aujourd’hui pour façonner l’avenir.</p>
   </div>
 
@@ -147,33 +142,23 @@
     <p>Transmettre à notre tour et poursuivre la réalisation d’un idéal.</p>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
   </footer>
 
-  <!-- JS pour animations et menu burger -->
   <script>
-    // Apparition progressive des sections
     const sections = document.querySelectorAll('.section');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.2 });
 
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+    sections.forEach(section => observer.observe(section));
 
-    // Menu burger
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
+    toggle.addEventListener('click', () => nav.classList.toggle('active'));
   </script>
 </body>
 </html>
