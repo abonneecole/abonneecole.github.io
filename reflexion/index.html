@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À Bonne École - Une réflexion</title>
   <style>
+    /* ---------- Styles globaux ---------- */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #000, #333, #fff);
+      background: linear-gradient(to bottom, #f0f0f0, #d9e4f5, #f8d7e0);
       color: black;
       scroll-behavior: smooth;
     }
@@ -19,38 +20,86 @@
       width: 100%;
       background: rgba(255,255,255,0.95);
       z-index: 1000;
-      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      padding: 15px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    header h1 { margin: 0; font-size: 1.5em; }
-    nav a { margin: 0 15px; text-decoration: none; color: black; font-weight: bold; }
-    nav a:hover { color: gray; }
-
-    /* Bloc central */
-    .reflection-container {
-      max-width: 900px;
-      margin: 150px auto 50px auto;
-      background: rgba(255,255,255,0.9);
-      padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-      text-align: center;
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
     }
 
-    .reflection-container h2 {
-      margin-top: 0;
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: gray;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: black;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* ---------- Sections ---------- */
+    .section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-size: 2em;
-      color: #222;
+      text-align: center;
+      padding: 60px 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
     }
 
-    .reflection-container p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      color: #333;
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     footer {
@@ -58,10 +107,10 @@
       color: white;
       text-align: center;
       padding: 20px 0;
-      margin-top: 50px;
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>À Bonne École</h1>
@@ -72,17 +121,48 @@
       <a href="../index.html#adhesion">Adhérer</a>
       <a href="../index.html#contact">Contact</a>
     </nav>
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
-  <div class="reflection-container">
-    <h2>Notre réflexion :</h2>
-    <p>S’investir aujourd’hui pour façonner l’avenir.</p>
+  <!-- Sections de réflexion -->
+  <div id="vision1" class="section" style="margin-top:80px;">
+    <p><strong>Notre réflexion :</strong><br>  
+    S’investir aujourd’hui pour façonner l’avenir.</p>
+  </div>
+
+  <div id="vision2" class="section">
     <p>Semer des rêves, cultiver des vocations.</p>
+  </div>
+
+  <div id="vision3" class="section">
     <p>Transmettre à notre tour et poursuivre la réalisation d’un idéal.</p>
   </div>
 
   <footer>
     <p>&copy; 2025 À Bonne École - Tous droits réservés.</p>
   </footer>
+
+  <script>
+    // Intersection Observer pour animation au scroll
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Menu burger
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => nav.classList.toggle('active'));
+  </script>
 </body>
 </html>
